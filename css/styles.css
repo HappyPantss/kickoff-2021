@@ -23,9 +23,9 @@ body {
 }
 
 
-/* CONTAINER */
+/* card */
 
-.container {
+.card {
     background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
     display: flex;
     flex-wrap: wrap;
@@ -34,12 +34,19 @@ body {
     border-radius: 2rem;
     padding: 2rem;
     font-family: 'Roboto', sans-serif;
+    box-shadow: cubic-bezier(0.4, 0.0, 0.2, 1);
+    transition: transform 0.25s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+.card:hover {
+    -webkit-transform: scale(1.1) rotate(1deg);
+    transform: scale(1.1) rotate(1deg);
 }
 
 
 /* IMAGE */
 
-.container .mugshot {
+.card .mugshot {
     /* background: lightgreen; */
     display: flex;
     align-items: center;
@@ -47,7 +54,7 @@ body {
     flex: 50%;
 }
 
-.container img {
+.card img {
     height: 16rem;
     width: 16rem;
     border-radius: 100%;
@@ -58,7 +65,7 @@ body {
 
 /* INFO */
 
-.container .info {
+.card .info {
     /* background: pink; */
     flex: 50%;
     padding: 2rem;
@@ -67,25 +74,25 @@ body {
     justify-content: center;
 }
 
-.container .info h1 {
+.card .info h1 {
     font-weight: 700;
     font-size: 3rem;
 }
 
-.container .info h2 {
+.card .info h2 {
     font-weight: 100;
     font-size: 1.3rem;
     margin-bottom: .4rem;
 }
 
-.container .info p {
+.card .info p {
     font-weight: 400;
 }
 
 
 /* SKILLS */
 
-.container .skills {
+.card .skills {
     /* background: lightblue; */
     background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
     flex: 100%;
@@ -98,17 +105,17 @@ body {
     padding: 1rem;
 }
 
-.container .skills .skill {
+.card .skills .skill {
     min-width: 10rem;
 }
 
-.container .skills .skill .bar {
+.card .skills .skill .bar {
     width: 100%;
     background-color: #ccc;
     border-radius: 10px;
 }
 
-.container .skills .skill .bar .lang {
+.card .skills .skill .bar .lang {
     padding-top: 10px;
     padding-bottom: 10px;
     border-radius: 10px;
@@ -117,14 +124,50 @@ body {
 .html {
     width: 95%;
     background-color: var(--html);
+    animation-name: htmlBar;
+    animation-iteration-count: 1;
+    animation-duration: 2s;
+}
+
+@keyframes htmlBar {
+    0% {
+        width: 10%;
+    }
+    100% {
+        width: 95%;
+    }
 }
 
 .css {
     width: 90%;
     background-color: var(--css);
+    animation-name: cssBar;
+    animation-iteration-count: 1;
+    animation-duration: 2s;
+}
+
+@keyframes cssBar {
+    0% {
+        width: 10%;
+    }
+    100% {
+        width: 90%;
+    }
 }
 
 .js {
     width: 35%;
     background-color: var(--js);
+    animation-name: jsBar;
+    animation-iteration-count: 1;
+    animation-duration: 2s;
+}
+
+@keyframes jsBar {
+    0% {
+        width: 10%;
+    }
+    100% {
+        width: 35%;
+    }
 }
